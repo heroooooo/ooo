@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 
     public List<Word> getWordslist() {
 
-        GetDB DB = new GetDB(MainActivity.this);
+        GetDB DB = new GetDB(getApplicationContext());
         db = DB.getDB();
         List<Word> wordsList = new ArrayList<Word>();
         Cursor cursor = db.rawQuery("select * from wordlist",null);

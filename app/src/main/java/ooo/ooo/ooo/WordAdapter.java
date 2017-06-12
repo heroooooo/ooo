@@ -23,7 +23,7 @@ public class WordAdapter extends BaseAdapter {
     public WordAdapter(List<Word> wordsList, Context mContext) {
         this.wordsList = wordsList;
         this.mContext = mContext;
- //       randomColor = new RandomColor();
+//        randomColor = new RandomColor();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class WordAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if(convertView == null){
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.list,parent,false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.list7,parent,false);
             holder = new ViewHolder();
             holder.word = (TextView) convertView.findViewById(R.id.word);
             holder._en = (TextView) convertView.findViewById(R.id._en);
@@ -56,14 +56,15 @@ public class WordAdapter extends BaseAdapter {
         }else{
             holder = (ViewHolder) convertView.getTag();
         }
+//        int color=randomColor.randomColor();
         holder.id.setText(String.valueOf(wordsList.get(position).getId()));
         holder.word.setText(wordsList.get(position).getWord());
-        holder.word.setTextColor(randomColor.randomColor());
+//        holder.word.setTextColor(color);
         holder._en.setText(wordsList.get(position).get_en());
-        holder._en.setTextColor(randomColor.randomColor());
+//        holder._en.setTextColor(color);
 //        holder._am.setText(wordsList.get(position).get_am());
        holder.meaning.setText(wordsList.get(position).getMeaning());
-        holder.meaning.setTextColor(randomColor.randomColor());
+//        holder.meaning.setTextColor(color);
         return convertView;
     }
     static class ViewHolder{

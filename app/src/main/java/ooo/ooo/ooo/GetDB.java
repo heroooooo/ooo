@@ -14,12 +14,14 @@ import java.io.InputStream;
 
 public class GetDB {
     private Context context;
-    private String sdpath = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/mydatabase";//sdpath用于存放保存的路径。
+   // private String sdpath = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/mydatabase";//sdpath用于存放保存的路径。 //5.0
+   private String sdpath ;
     private String filename = "word.db"; //filename用于保存文件名。
 
 
     public GetDB(Context context) {
         this.context = context;
+        sdpath =context.getFilesDir().getPath().toString()+"/mydatabase";
     }
 
     public SQLiteDatabase getDB() {
